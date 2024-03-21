@@ -1,0 +1,13 @@
+image: docker:latest
+
+services:
+  - docker:evolution-api
+
+before_script:
+  - docker login -u "$DOCKER_HUB_LOGIN" -p "$DOCKER_HUB_ACCESS_TOKEN"
+
+build:
+  stage: build
+  script:
+    - docker build -t atendedireito/evolution-api:latest .
+    - docker push atendedireito/evolution-api:latest
