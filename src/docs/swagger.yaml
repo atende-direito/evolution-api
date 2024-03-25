@@ -1,38 +1,24 @@
 openapi: 3.0.0
 info:
-  title: Evolution API
+  title: Atende Direito API
   description: |
     </br>
     <hr style="height: 5px;background: #007500;margin: 20px 0;box-shadow: 0px 3px 5px 0px rgb(204 204 204);">
 
     <div align="center">
 
-    [![Whatsapp Group](https://img.shields.io/badge/Group-WhatsApp-%2322BC18)](https://evolution-api.com/whatsapp)
-    [![Discord Community](https://img.shields.io/badge/Discord-Community-blue)](https://evolution-api.com/discord)
-    [![Postman Collection](https://img.shields.io/badge/Postman-Collection-orange)](https://evolution-api.com/postman) 
-    [![Documentation](https://img.shields.io/badge/Documentation-Official-green)](https://doc.evolution-api.com)
-    [![License](https://img.shields.io/badge/license-GPL--3.0-orange)](./LICENSE)
-    [![Support](https://img.shields.io/badge/Donation-picpay-green)](https://app.picpay.com/user/davidsongomes1998)
-    [![Support](https://img.shields.io/badge/Buy%20me-coffe-orange)](https://bmc.link/evolutionapi)
-
     </div>
       
-    <div align="center"><img src="https://raw.githubusercontent.com/EvolutionAPI/evolution-api/main/public/images/cover.png"></div>
+    <div align="center"><img src="https://s3.setupautomatizado.com.br/typebot/public/workspaces/cls6kc4by0001dk2z78nks8fm/typebots/clt9gypkf000110y30op8lcrh/blocks/hsh3cw8cscoymzrih3uwmiiz?v=1711327571700"></div>
 
-    <font size='3'>
-      This project is based on the [evolution](https://github.com/code-chat-br/whatsapp-api). The original project is an implementation of [Baileys](https://github.com/WhiskeySockets/Baileys), serving as a Restful API service that controls WhatsApp functions.</br> 
-      The code allows the creation of multiservice chats, service bots, or any other system that utilizes WhatsApp. The documentation provides instructions on how to set up and use the project, as well as additional information about its features and configuration options.
-    </font>
-
-    [![Run in Postman](https://run.pstmn.io/button.svg)](https://god.gw.postman.com/run-collection/26869335-5546d063-156b-4529-915f-909dd628c090?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D26869335-5546d063-156b-4529-915f-909dd628c090%26entityType%3Dcollection%26workspaceId%3D339a4ee7-378b-45c9-b5b8-fd2c0a9c2442)
   version: 1.7.0
   contact:
-    name: DavidsonGomes
-    email: contato@agenciadgcode.com
+    name: Atende Direto
+    email: contato@atendedireito.com.br
     url: https://img.shields.io/badge/license-GPL--3.0-orange
   license:
     name: GNU General Public License v3.0
-    url: https://github.com/EvolutionAPI/evolution-api/blob/main/LICENSE
+    url: https://github.com/atendedireito/
 servers: []
 components:
   securitySchemes:
@@ -107,7 +93,7 @@ paths:
           schema:
             type: string
           description: Retrieve one or all instances (optional).
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -149,7 +135,7 @@ paths:
           schema:
             type: string
           description: Connect to your instance.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -175,7 +161,7 @@ paths:
           schema:
             type: string
           description: Connect to your instance.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -193,7 +179,7 @@ paths:
           schema:
             type: string
           description: Check the connection state of your instance.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -211,7 +197,7 @@ paths:
           schema:
             type: string
           description: Logout from your instance.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -229,7 +215,7 @@ paths:
           schema:
             type: string
           description: Delete your instance.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -314,7 +300,7 @@ paths:
           schema:
             type: string
           description: The name of the instance to which the message should be sent.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -366,7 +352,7 @@ paths:
           schema:
             type: string
           description: The name of the instance to which the status message should be sent.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -459,7 +445,7 @@ paths:
           schema:
             type: string
           description: The name of the instance to which the media message should be sent.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -545,7 +531,7 @@ paths:
           schema:
             type: string
           description: The name of the instance to which the audio should be sent.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -596,7 +582,7 @@ paths:
           schema:
             type: string
           description: The name of the instance to which the audio should be sent.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -692,7 +678,7 @@ paths:
           schema:
             type: string
           description: The name of the instance to which the location should be sent.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -796,7 +782,7 @@ paths:
           schema:
             type: string
           description: The name of the instance to which the contacts should be sent.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -846,7 +832,7 @@ paths:
           schema:
             type: string
           description: The name of the instance to which the reaction should be sent.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -935,7 +921,7 @@ paths:
           schema:
             type: string
           description: The name of the instance to which the poll should be sent.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1000,7 +986,7 @@ paths:
           schema:
             type: string
           description: The name of the instance to which the poll should be sent.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1036,7 +1022,7 @@ paths:
           schema:
             type: string
           description: The name of the instance to which the reaction should be sent.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1082,7 +1068,7 @@ paths:
           schema:
             type: string
           description: The name of the instance to which the reaction should be sent.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1134,7 +1120,7 @@ paths:
           schema:
             type: string
           description: The name of the instance to which the reaction should be sent.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1153,7 +1139,7 @@ paths:
           schema:
             type: string
           description: The name of the instance to which the reaction should be sent.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1184,7 +1170,7 @@ paths:
           schema:
             type: string
           description: The name of the instance to which the reaction should be sent.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1217,7 +1203,7 @@ paths:
           schema:
             type: string
           description: The name of the instance to which the reaction should be sent.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1254,7 +1240,7 @@ paths:
           schema:
             type: string
           description: The name of the instance to which the reaction should be sent.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1305,7 +1291,7 @@ paths:
           schema:
             type: string
           description: The name of the instance to which the reaction should be sent.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1338,7 +1324,7 @@ paths:
           schema:
             type: string
           description: The name of the instance to which the reaction should be sent.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1357,7 +1343,7 @@ paths:
           schema:
             type: string
           description: The name of the instance to which the reaction should be sent.
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1394,7 +1380,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1428,7 +1414,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1462,7 +1448,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1496,7 +1482,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1520,7 +1506,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1544,7 +1530,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1580,7 +1566,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1603,7 +1589,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1627,7 +1613,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1650,7 +1636,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1674,7 +1660,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1708,7 +1694,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1738,7 +1724,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1766,7 +1752,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1784,7 +1770,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1872,7 +1858,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1890,7 +1876,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1950,7 +1936,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -1968,7 +1954,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -2028,7 +2014,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -2046,7 +2032,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -2065,7 +2051,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -2100,7 +2086,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       requestBody:
         content:
           application/json:
@@ -2184,7 +2170,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -2202,7 +2188,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -2258,7 +2244,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -2276,7 +2262,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -2326,7 +2312,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -2375,7 +2361,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -2393,7 +2379,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -2425,7 +2411,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -2457,7 +2443,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -2475,7 +2461,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -2516,7 +2502,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -2534,7 +2520,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -2563,7 +2549,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -2591,7 +2577,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -2619,7 +2605,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -2647,7 +2633,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -2675,7 +2661,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -2693,7 +2679,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -2711,7 +2697,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
@@ -2764,7 +2750,7 @@ paths:
             type: string
           required: true
           description: "- required"
-          example: "evolution"
+          example: "atendedireito"
       responses:
         "200":
           description: Successful response
