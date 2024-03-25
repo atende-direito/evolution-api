@@ -1,0 +1,84 @@
+/* Overall background */
+.swagger-ui {
+    background-color: #2a2b2d;
+}
+
+/* Headers */
+.swagger-ui .topbar {
+    background-color: #1a1a1a;
+}
+
+/* Titles */
+.swagger-ui .info .title {
+    color: #fff;
+}
+
+/* Descriptions and text */
+.swagger-ui .markdown p, 
+.swagger-ui .info .description p, 
+.swagger-ui .info .version {
+    color: #b4b4b4;
+}
+
+/* Operation listing */
+.swagger-ui .opblock-tag, 
+.swagger-ui .opblock .opblock-summary-method {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Parameter descriptions */
+.swagger-ui .opblock .opblock-section-header h4 {
+    color: #fff;
+}
+
+/* Parameter boxes */
+.swagger-ui .opblock .opblock-section-header .parameter__type, 
+.swagger-ui .opblock .opblock-section-header .parameter__in {
+    color: #ebebeb;
+    background-color: #444;
+}
+
+/* Response messages */
+.swagger-ui .opblock .opblock-section-header .response-control-media-type__accept, 
+.swagger-ui .opblock .opblock-section-header .response-col_status {
+    color: #ebebeb;
+    background-color: #444;
+}
+
+/* Example values */
+.swagger-ui .opblock .opblock-section-header .model-example {
+    background-color: #3b3b3b;
+    color: #dcdcdc;
+}
+
+/* Execute button */
+.swagger-ui .opblock .opblock-section-header .btn {
+    background-color: #4e4eff;
+    color: #fff;
+}
+
+/* Model descriptions */
+.swagger-ui .model {
+    background-color: #3b3b3b;
+    color: #fff;
+}
+
+/* Model properties */
+.swagger-ui .model .property.primitive, 
+.swagger-ui .model .property.array {
+    background-color: #444;
+    color: #ebebeb;
+}
+
+/* Definitions */
+.swagger-ui .model-box {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Response body */
+.swagger-ui .response .response_body {
+    background-color: #3b3b3b;
+    color: #dcdcdc;
+}

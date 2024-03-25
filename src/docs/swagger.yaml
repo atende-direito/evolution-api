@@ -9,16 +9,14 @@ info:
 
     </div>
       
-    <div align="center"><img src="https://s3.setupautomatizado.com.br/typebot/public/workspaces/cls6kc4by0001dk2z78nks8fm/typebots/clt9gypkf000110y30op8lcrh/blocks/hsh3cw8cscoymzrih3uwmiiz?v=1711327571700"></div>
+    <div align="center"><img src="https://s3.setupautomatizado.com.br/typebot/public/workspaces/cls6kc4by0001dk2z78nks8fm/typebots/clt9gypkf000110y30op8lcrh/blocks/hsh3cw8cscoymzrih3uwmiiz?v=1711330642578"></div>
 
   version: 1.7.0
   contact:
     name: Atende Direto
     email: contato@atendedireito.com.br
-    url: https://img.shields.io/badge/license-GPL--3.0-orange
-  license:
-    name: GNU General Public License v3.0
-    url: https://github.com/atendedireito/
+    url: https://app.atendedireito.com.br
+
 servers: []
 components:
   securitySchemes:
