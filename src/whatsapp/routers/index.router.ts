@@ -43,11 +43,11 @@ router
   .get('/', (req, res) => {
     res.status(HttpStatus.OK).json({
       status: HttpStatus.OK,
-      message: 'Welcome to the Atende Direito API, it is working!',
+      message: 'Welcome to the Evolution API, it is working!',
       version: packageJson.version,
       swagger: !serverConfig.DISABLE_DOCS ? `${req.protocol}://${req.get('host')}/docs` : undefined,
       manager: !serverConfig.DISABLE_MANAGER ? `${req.protocol}://${req.get('host')}/manager` : undefined,
-      info: `https://atendedireito.com.br`,
+      documentation: `https://doc.evolution-api.com`,
     });
   })
   .use('/instance', new InstanceRouter(configService, ...guards).router)
