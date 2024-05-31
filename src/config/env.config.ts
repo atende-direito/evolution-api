@@ -63,17 +63,42 @@ export type Database = {
   SAVE_DATA: SaveData;
 };
 
-export type Redis = {
-  ENABLED: boolean;
-  URI: string;
-  PREFIX_KEY: string;
+export type EventsRabbitmq = {
+  APPLICATION_STARTUP: boolean;
+  INSTANCE_CREATE: boolean;
+  INSTANCE_DELETE: boolean;
+  QRCODE_UPDATED: boolean;
+  MESSAGES_SET: boolean;
+  MESSAGES_UPSERT: boolean;
+  MESSAGES_UPDATE: boolean;
+  MESSAGES_DELETE: boolean;
+  SEND_MESSAGE: boolean;
+  CONTACTS_SET: boolean;
+  CONTACTS_UPDATE: boolean;
+  CONTACTS_UPSERT: boolean;
+  PRESENCE_UPDATE: boolean;
+  CHATS_SET: boolean;
+  CHATS_UPDATE: boolean;
+  CHATS_DELETE: boolean;
+  CHATS_UPSERT: boolean;
+  CONNECTION_UPDATE: boolean;
+  LABELS_EDIT: boolean;
+  LABELS_ASSOCIATION: boolean;
+  GROUPS_UPSERT: boolean;
+  GROUP_UPDATE: boolean;
+  GROUP_PARTICIPANTS_UPDATE: boolean;
+  CALL: boolean;
+  NEW_JWT_TOKEN: boolean;
+  TYPEBOT_START: boolean;
+  TYPEBOT_CHANGE_STATUS: boolean;
 };
 
 export type Rabbitmq = {
   ENABLED: boolean;
-  MODE: string; // global, single, isolated
-  EXCHANGE_NAME: string; // available for global and single, isolated mode will use instance name as exchange
   URI: string;
+  EXCHANGE_NAME: string;
+  GLOBAL_ENABLED: boolean;
+  EVENTS: EventsRabbitmq;
 };
 
 export type Sqs = {
@@ -86,6 +111,7 @@ export type Sqs = {
 
 export type Websocket = {
   ENABLED: boolean;
+  GLOBAL_EVENTS: boolean;
 };
 
 export type WaBusiness = {
@@ -152,6 +178,7 @@ export type CacheConfRedis = {
   URI: string;
   PREFIX_KEY: string;
   TTL: number;
+  SAVE_INSTANCES: boolean;
 };
 export type CacheConfLocal = {
   ENABLED: boolean;
@@ -159,7 +186,7 @@ export type CacheConfLocal = {
 };
 export type SslConf = { PRIVKEY: string; FULLCHAIN: string };
 export type Webhook = { GLOBAL?: GlobalWebhook; EVENTS: EventsWebhook };
-export type ConfigSessionPhone = { CLIENT: string; NAME: string };
+export type ConfigSessionPhone = { CLIENT: string; NAME: string; VERSION: string };
 export type QrCode = { LIMIT: number; COLOR: string };
 export type Typebot = { API_VERSION: string; KEEP_OPEN: boolean };
 export type Chatwoot = {
@@ -185,7 +212,6 @@ export interface Env {
   STORE: StoreConf;
   CLEAN_STORE: CleanStoreConf;
   DATABASE: Database;
-  REDIS: Redis;
   RABBITMQ: Rabbitmq;
   SQS: Sqs;
   WEBSOCKET: Websocket;
@@ -256,8 +282,8 @@ export class ConfigService {
         LABELS: process.env?.STORE_LABELS === 'true',
       },
       CLEAN_STORE: {
-        CLEANING_INTERVAL: Number.isInteger(process.env?.CLEAN_STORE_CLEANING_TERMINAL)
-          ? Number.parseInt(process.env.CLEAN_STORE_CLEANING_TERMINAL)
+        CLEANING_INTERVAL: Number.isInteger(process.env?.CLEAN_STORE_CLEANING_INTERVAL)
+          ? Number.parseInt(process.env.CLEAN_STORE_CLEANING_INTERVAL)
           : 7200,
         MESSAGES: process.env?.CLEAN_STORE_MESSAGES === 'true',
         MESSAGE_UP: process.env?.CLEAN_STORE_MESSAGE_UP === 'true',
@@ -279,16 +305,40 @@ export class ConfigService {
           LABELS: process.env?.DATABASE_SAVE_DATA_LABELS === 'true',
         },
       },
-      REDIS: {
-        ENABLED: process.env?.REDIS_ENABLED === 'true',
-        URI: process.env.REDIS_URI || '',
-        PREFIX_KEY: process.env.REDIS_PREFIX_KEY || 'evolution',
-      },
       RABBITMQ: {
         ENABLED: process.env?.RABBITMQ_ENABLED === 'true',
-        MODE: process.env?.RABBITMQ_MODE || 'isolated',
+        GLOBAL_ENABLED: process.env?.RABBITMQ_GLOBAL_ENABLED === 'true',
         EXCHANGE_NAME: process.env?.RABBITMQ_EXCHANGE_NAME || 'evolution_exchange',
         URI: process.env.RABBITMQ_URI || '',
+        EVENTS: {
+          APPLICATION_STARTUP: process.env?.RABBITMQ_EVENTS_APPLICATION_STARTUP === 'true',
+          INSTANCE_CREATE: process.env?.RABBITMQ_EVENTS_INSTANCE_CREATE === 'true',
+          INSTANCE_DELETE: process.env?.RABBITMQ_EVENTS_INSTANCE_DELETE === 'true',
+          QRCODE_UPDATED: process.env?.RABBITMQ_EVENTS_QRCODE_UPDATED === 'true',
+          MESSAGES_SET: process.env?.RABBITMQ_EVENTS_MESSAGES_SET === 'true',
+          MESSAGES_UPSERT: process.env?.RABBITMQ_EVENTS_MESSAGES_UPSERT === 'true',
+          MESSAGES_UPDATE: process.env?.RABBITMQ_EVENTS_MESSAGES_UPDATE === 'true',
+          MESSAGES_DELETE: process.env?.RABBITMQ_EVENTS_MESSAGES_DELETE === 'true',
+          SEND_MESSAGE: process.env?.RABBITMQ_EVENTS_SEND_MESSAGE === 'true',
+          CONTACTS_SET: process.env?.RABBITMQ_EVENTS_CONTACTS_SET === 'true',
+          CONTACTS_UPDATE: process.env?.RABBITMQ_EVENTS_CONTACTS_UPDATE === 'true',
+          CONTACTS_UPSERT: process.env?.RABBITMQ_EVENTS_CONTACTS_UPSERT === 'true',
+          PRESENCE_UPDATE: process.env?.RABBITMQ_EVENTS_PRESENCE_UPDATE === 'true',
+          CHATS_SET: process.env?.RABBITMQ_EVENTS_CHATS_SET === 'true',
+          CHATS_UPDATE: process.env?.RABBITMQ_EVENTS_CHATS_UPDATE === 'true',
+          CHATS_UPSERT: process.env?.RABBITMQ_EVENTS_CHATS_UPSERT === 'true',
+          CHATS_DELETE: process.env?.RABBITMQ_EVENTS_CHATS_DELETE === 'true',
+          CONNECTION_UPDATE: process.env?.RABBITMQ_EVENTS_CONNECTION_UPDATE === 'true',
+          LABELS_EDIT: process.env?.RABBITMQ_EVENTS_LABELS_EDIT === 'true',
+          LABELS_ASSOCIATION: process.env?.RABBITMQ_EVENTS_LABELS_ASSOCIATION === 'true',
+          GROUPS_UPSERT: process.env?.RABBITMQ_EVENTS_GROUPS_UPSERT === 'true',
+          GROUP_UPDATE: process.env?.RABBITMQ_EVENTS_GROUPS_UPDATE === 'true',
+          GROUP_PARTICIPANTS_UPDATE: process.env?.RABBITMQ_EVENTS_GROUP_PARTICIPANTS_UPDATE === 'true',
+          CALL: process.env?.RABBITMQ_EVENTS_CALL === 'true',
+          NEW_JWT_TOKEN: process.env?.RABBITMQ_EVENTS_NEW_JWT_TOKEN === 'true',
+          TYPEBOT_START: process.env?.RABBITMQ_EVENTS_TYPEBOT_START === 'true',
+          TYPEBOT_CHANGE_STATUS: process.env?.RABBITMQ_EVENTS_TYPEBOT_CHANGE_STATUS === 'true',
+        },
       },
       SQS: {
         ENABLED: process.env?.SQS_ENABLED === 'true',
@@ -299,6 +349,7 @@ export class ConfigService {
       },
       WEBSOCKET: {
         ENABLED: process.env?.WEBSOCKET_ENABLED === 'true',
+        GLOBAL_EVENTS: process.env?.WEBSOCKET_GLOBAL_EVENTS === 'true',
       },
       WA_BUSINESS: {
         TOKEN_WEBHOOK: process.env.WA_BUSINESS_TOKEN_WEBHOOK || '',
@@ -369,6 +420,7 @@ export class ConfigService {
       CONFIG_SESSION_PHONE: {
         CLIENT: process.env?.CONFIG_SESSION_PHONE_CLIENT || 'Evolution API',
         NAME: process.env?.CONFIG_SESSION_PHONE_NAME || 'Chrome',
+        VERSION: process.env?.CONFIG_SESSION_PHONE_VERSION || null,
       },
       QRCODE: {
         LIMIT: Number.parseInt(process.env.QRCODE_LIMIT) || 30,
@@ -396,6 +448,7 @@ export class ConfigService {
           URI: process.env?.CACHE_REDIS_URI || '',
           PREFIX_KEY: process.env?.CACHE_REDIS_PREFIX_KEY || 'evolution-cache',
           TTL: Number.parseInt(process.env?.CACHE_REDIS_TTL) || 604800,
+          SAVE_INSTANCES: process.env?.CACHE_REDIS_SAVE_INSTANCES === 'true',
         },
         LOCAL: {
           ENABLED: process.env?.CACHE_LOCAL_ENABLED === 'true',
