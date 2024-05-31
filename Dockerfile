@@ -1,14 +1,8 @@
 FROM node:20.7.0-alpine AS builder
 
-<<<<<<< HEAD
-LABEL version="1.7.0" description="Api to control whatsapp features through http requests." 
+LABEL version="1.8.0" description="Api to control whatsapp features through http requests." 
 LABEL maintainer="Atende Direito" git="https://github.com/atendedireito"
 LABEL contact="contato@atendedireito.com.br"
-=======
-LABEL version="1.8.0" description="Api to control whatsapp features through http requests." 
-LABEL maintainer="Davidson Gomes" git="https://github.com/DavidsonGomes"
-LABEL contact="contato@agenciadgcode.com"
->>>>>>> upstream/main
 
 RUN apk update && apk upgrade && \
     apk add --no-cache git tzdata ffmpeg wget curl
