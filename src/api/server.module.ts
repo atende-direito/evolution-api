@@ -1,5 +1,5 @@
 import { CacheEngine } from '../cache/cacheengine';
-import { configService } from '../config/env.config';
+import { configService, ProviderSession } from '../config/env.config';
 import { eventEmitter } from '../config/event.config';
 import { Logger } from '../config/logger.config';
 import { dbserver } from '../libs/db.connect';
@@ -47,6 +47,7 @@ import {
   WebsocketModel,
 } from './models';
 import { LabelModel } from './models/label.model';
+import { ProviderFiles } from './provider/sessions';
 import { AuthRepository } from './repository/auth.repository';
 import { ChatRepository } from './repository/chat.repository';
 import { ContactRepository } from './repository/contact.repository';
@@ -108,7 +109,13 @@ export const repository = new RepositoryBroker(
 
 export const cache = new CacheService(new CacheEngine(configService, 'instance').getEngine());
 const chatwootCache = new CacheService(new CacheEngine(configService, ChatwootService.name).getEngine());
-const messagesLostCache = new CacheService(new CacheEngine(configService, 'baileys').getEngine());
+const baileysCache = new CacheService(new CacheEngine(configService, 'baileys').getEngine());
+
+let providerFiles: ProviderFiles = null;
+
+if (configService.get<ProviderSession>('PROVIDER')?.ENABLED) {
+  providerFiles = new ProviderFiles(configService);
+}
 
 export const waMonitor = new WAMonitoringService(
   eventEmitter,
@@ -116,7 +123,8 @@ export const waMonitor = new WAMonitoringService(
   repository,
   cache,
   chatwootCache,
-  messagesLostCache,
+  baileysCache,
+  providerFiles,
 );
 
 const authService = new AuthService(configService, waMonitor, repository);
@@ -167,7 +175,8 @@ export const instanceController = new InstanceController(
   proxyController,
   cache,
   chatwootCache,
-  messagesLostCache,
+  baileysCache,
+  providerFiles,
 );
 export const sendMessageController = new SendMessageController(waMonitor);
 export const chatController = new ChatController(waMonitor);

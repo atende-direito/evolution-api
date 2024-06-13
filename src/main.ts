@@ -9,9 +9,10 @@ import { join } from 'path';
 import { initAMQP, initGlobalQueues } from './api/integrations/rabbitmq/libs/amqp.server';
 import { initSQS } from './api/integrations/sqs/libs/sqs.server';
 import { initIO } from './api/integrations/websocket/libs/socket.server';
+import { ProviderFiles } from './api/provider/sessions';
 import { HttpStatus, router } from './api/routes/index.router';
 import { waMonitor } from './api/server.module';
-import { Auth, configService, Cors, HttpServer, Rabbitmq, Sqs, Webhook } from './config/env.config';
+import { Auth, configService, Cors, HttpServer, ProviderSession, Rabbitmq, Sqs, Webhook } from './config/env.config';
 import { onUnexpectedError } from './config/error.config';
 import { Logger } from './config/logger.config';
 import { ROOT_DIR } from './config/path.config';
@@ -22,9 +23,17 @@ function initWA() {
   waMonitor.loadInstance();
 }
 
-function bootstrap() {
+async function bootstrap() {
   const logger = new Logger('SERVER');
   const app = express();
+
+  let providerFiles: ProviderFiles = null;
+
+  if (configService.get<ProviderSession>('PROVIDER')?.ENABLED) {
+    providerFiles = new ProviderFiles(configService);
+    await providerFiles.onModuleInit();
+    logger.info('Provider:Files - ON');
+  }
 
   app.use(
     cors({
